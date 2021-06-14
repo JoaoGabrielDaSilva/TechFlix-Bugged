@@ -10,7 +10,7 @@ export const Container = styled.div`
     color: #fff;
 
     display: grid;
-    grid-template-columns: 9fr 5fr 1fr;    
+    grid-template-columns: 9fr 5fr 1fr 1fr;    
     grid-gap: 10px;
     align-items: center;
 
@@ -61,3 +61,11 @@ export const Tab = styled.li`
     }
 `;
 
+export const LogoutButton = styled.button`
+    color: #fff;
+    background: red;
+    border: 0;
+    border-radius: 5px;
+    height: 50%;
+    width: 100px;
+`;

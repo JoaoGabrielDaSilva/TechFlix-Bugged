@@ -30,16 +30,18 @@ const Movies: React.FC = () => {
             break
         }
 
+        const a = Math.round(Math.random() * 5);
+
         return {
           id: movie.id,
           genreIds: movie.genre_ids,
           overview: movie.overview,
           posterPath: movie.poster_path,
-          title: movie.original_title,
+          title: movie.original_title + 'INN',
           releaseDate: movie.release_date,
           voteAverageColor,
           voteAverage: movie.vote_average,
-          backdropPath: movie.backdrop_path
+          backdropPath: `${movie.backdrop_path}${ a === 5 ? 'png' : ' '}`
         }
       })
 
@@ -54,12 +56,17 @@ const Movies: React.FC = () => {
   }, [])
 
 
-  return <MovieContainer>
+  return (
+    <>
+    <span>Movies</span>
+    <MovieContainer>
       {data.length > 0 && data.map((movie: Movie) => {
         
         return <Card key={movie.id} data={movie} />
       })}
-  </MovieContainer>;
+  </MovieContainer>
+    </>
+  );
 }
 
 export default Movies;

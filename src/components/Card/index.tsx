@@ -19,16 +19,18 @@ interface MovieProps {
     }
 }
 
-const Card: React.FC<MovieProps> = ({data}) => {
+const Card: React.FC<MovieProps> = ({ data }) => {
 
   const history = useHistory()
 
+  const movieData = {};
+
   const getDetails = () => {
-    history.push('movie-details', data)
+    history.push('movie-details', movieData)
   }
 
   return <Container onClick={() => getDetails()}>
-      <CardImage src={data ? `https://image.tmdb.org/t/p/w500${data.backdropPath}` : ''} />
+      <CardImage src={`https://image.tmdb.org/t/p/w500${data.backdropPath}`} />
       <Note color={data.voteAverageColor}>{data.voteAverage}</Note>
       <CardInfo>
         <Title>{data.title}</Title>

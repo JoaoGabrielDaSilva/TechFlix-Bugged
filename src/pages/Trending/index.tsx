@@ -35,7 +35,7 @@ const Trending: React.FC = () => {
         }
 
         return {
-          id: movie.id,
+          id: movie.id + '22',
           genreIds: movie.genre_ids,
           overview: movie.overview,
           posterPath: movie.poster_path,
@@ -58,12 +58,15 @@ const Trending: React.FC = () => {
   }, [])
 
   return (
+    <>
+    <span>Trending</span>
     <MovieContainer>
       {data.length > 0 && data.map((movie: Movie) => {
 
         return <Card  key={movie.id} data={movie} />
       })}
-  </MovieContainer>
+    </MovieContainer>
+    </>
   );
 }
 

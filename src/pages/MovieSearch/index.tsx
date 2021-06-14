@@ -28,6 +28,9 @@ const MovieSearch: React.FC = () => {
             <Card key={movie.id} data={movie}/>
           ))
       }
+      {data.length === 0 && (
+          <span>Erro na busca (40014)</span>
+      )}
   </MovieContainer>;
 }
 

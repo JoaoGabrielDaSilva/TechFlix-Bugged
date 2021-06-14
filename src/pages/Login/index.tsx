@@ -15,7 +15,7 @@ const Login: React.FC = () => {
 
     const handleLogin = () => {
 
-        if (loginData.email === 'user@gmail.com' && loginData.password === '12345') {
+        if (loginData.email && loginData.password) {
             localStorage.setItem('signed', 'true')
             history.push('/')
         }
